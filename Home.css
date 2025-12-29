@@ -318,3 +318,30 @@ h1, h2, h3 {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* Mobile Carousel Styling */
+@media (max-width: 992px) {
+    .carousel-container {
+        width: calc(100% + 40px); /* Bleeds to screen edges */
+        margin-left: -20px;       /* Offsets the section padding */
+        height: 400px;
+        overflow: hidden;         /* Hides the images not in view */
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .carousel-slide {
+        display: flex;
+        width: 300%;             /* 100% per image (3 images = 300%) */
+        height: 100%;
+        transition: transform 0.8s cubic-bezier(0.45, 0, 0.55, 1);
+    }
+
+    .slide-img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        /* background-color: #e0ddd7;  */
+    }
+}

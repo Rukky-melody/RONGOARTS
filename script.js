@@ -62,3 +62,23 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
+
+
+let counter = 0;
+const slide = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.slide-img');
+
+function moveCarousel() {
+    counter++;
+    
+    // If we reach the last image, go back to the first
+    if (counter >= images.length) {
+        counter = 0;
+    }
+    
+    // Move the slide container by -100% for each step
+    slide.style.transform = `translateX(${-counter * 100}%)`;
+}
+
+// Start the auto-timer
+setInterval(moveCarousel, 4000);
